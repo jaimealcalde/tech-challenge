@@ -1,7 +1,7 @@
 import pkg from "mongoose";
 const { Schema, model } = pkg;
 
-const GiftSchema = new Schema(
+const GifSchema = new Schema(
   {
     name: {
       type: String,
@@ -14,8 +14,10 @@ const GiftSchema = new Schema(
     },
     cloudinaryUrl: {
       type: String,
-    }
+    },
+    genre: {
+      type: String,
   }
-);
+});
 
-export default model("gift", GiftSchema);
+export default model("gif", GifSchema);

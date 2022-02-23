@@ -1,16 +1,16 @@
-import Gift from "../models/Gift.js";
+import Gif from "../models/Gif.js";
 import cloudinary from "../utils/cloudinary.js";
 
-export const getGifts = async (req, res) => {
+export const getGifs = async (req, res) => {
   try {
-    const users = await Gift.find();
-    res.json(gifts);
+    const gif = await Gif.find();
+    res.json(gif);
   } catch (error) {
     console.log(error);
   }
 };
 
-export const addGift = async (req, res) => {
+export const addGif = async (req, res) => {
   console.log(req.body);
 
   try {
@@ -19,15 +19,15 @@ export const addGift = async (req, res) => {
     // Upload image to cloudinary
     console.log(req.file.path)
     // Create instance of User
-    const gift = new Gift({
+    const gif = new Gif({
       name: req.body.firstName,
       cloudinaryId: result.public_id,
       cloudinaryUrl: result.secure_url,
       firebaseUser: req.body.firebaseUser,
     });
 
-    await gift.save();
-    res.status(200).json({ data: "Gift created", gift });
+    await gif.save();
+    res.status(200).json({ data: "Gif created", gif });
   } catch (error) {
     console.log(error);
   }

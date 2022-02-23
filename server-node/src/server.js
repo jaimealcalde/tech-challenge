@@ -1,9 +1,9 @@
 import express from "express";
 import morgan from "morgan";
-import config from "./config/config.js";
 import cors from "cors";
+import "dotenv/config";
 
-//import { userGifts } from "./routes/gift.routes.js";
+import { gifRoutes } from "./routes/gif.routes.js";
 
 const app = express();
 
@@ -11,14 +11,14 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(
+/*app.use(
     cors({
         origin: process.env.CLIENT_URL,
     })
-);
+);*/
 
 //?routes
 
-//app.use("/api/gift", userGifts);
+app.use("/api/gif", gifRoutes);
 
 export default app;

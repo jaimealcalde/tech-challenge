@@ -5,7 +5,7 @@ const multerConfig = {
   storage: multer.diskStorage({}),
   fileFilter: (req, file, cb) => {
     const ext = path.extname(file.originalname);
-    if (ext !== ".gift") {
+    if (ext !== ".gif" && ext !== ".webp") {
       cb(new Error("Image file type is not supported"), false);
       return;
     }
