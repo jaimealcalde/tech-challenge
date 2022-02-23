@@ -10,6 +10,50 @@ export const getGifs = async (req, res) => {
   }
 };
 
+export const getPetGifs = async (req, res) => {
+  try {
+    const gif = await Gif.find({
+      genre: pets,
+    });
+    res.json(gif);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getSportGifs = async (req, res) => {
+  try {
+    const gif = await Gif.find({
+      genre: sport,
+    });
+    res.json(gif);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getCartoonGifs = async (req, res) => {
+  try {
+    const gif = await Gif.find({
+      genre: cartoon,
+    });
+    res.json(gif);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getGamingGifs = async (req, res) => {
+  try {
+    const gif = await Gif.find({
+      genre: gaming,
+    });
+    res.json(gif);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const addGif = async (req, res) => {
   console.log(req.body);
 

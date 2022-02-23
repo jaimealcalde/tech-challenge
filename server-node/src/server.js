@@ -11,11 +11,12 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
-/*app.use(
+app.use(
     cors({
         origin: process.env.CLIENT_URL,
     })
-);*/
+);
+console.log( process.env.CLIENT_URL)
 
 //?routes
 
